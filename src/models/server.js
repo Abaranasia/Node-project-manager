@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 
 const { dbConnection } = require('../database/config');
 
@@ -6,6 +7,7 @@ class Server {
 
   constructor() {
     this.app = express();
+    this.app.use(cors());
     //this.port = process.env.PORT;
     this.port = 3000;
     this.projectsPath = '/api/projects';
