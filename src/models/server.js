@@ -8,8 +8,7 @@ class Server {
   constructor() {
     this.app = express();
     this.app.use(cors());
-    //this.port = process.env.PORT;
-    this.port = 3000;
+    this.port = process.env.PORT;
     this.projectsPath = '/api/projects';
     this.employeesPath = '/api/employees';
 
@@ -36,7 +35,7 @@ class Server {
     // this.app.get('/api', (req, res) => { res.json({msg: 'get API'})});
 
     // Instead of define here the routes, we import them from routes folder as if it was a middleware
-    this.app.use(this.projectsPath, require('../routes/projects'))
+    this.app.use(this.projectsPath, require('../routes/projects'));
     //    this.app.use(this.employeesPath, require('../routes/employees'))
   };
 
