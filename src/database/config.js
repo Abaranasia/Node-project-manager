@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
-const url = 'mongodb://127.0.0.1:27017';
+const dbName = 'prjmanager';
+const url = `mongodb://127.0.0.1:27017/${dbName}`;
 
 const dbConnection = async () => {
 
@@ -12,6 +13,7 @@ const dbConnection = async () => {
       // useCreateIndex: true,
       // useFindAndModify: false
     });
+
     console.log('~~~~ Database online ~~~~')
 
   } catch (error) {

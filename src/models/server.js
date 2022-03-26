@@ -19,7 +19,7 @@ class Server {
     //    this.middlewares();
 
     //Routes - define the way to enroute the website
-    //    this.routes();
+    this.routes();
   };
 
 
@@ -34,7 +34,7 @@ class Server {
     // this.app.get('/api', (req, res) => { res.json({msg: 'get API'})});
 
     // Instead of define here the routes, we import them from routes folder as if it was a middleware
-    //    this.app.use(this.projectsPath, require('../routes/projects'))
+    this.app.use(this.projectsPath, require('../routes/projects'))
     //    this.app.use(this.employeesPath, require('../routes/employees'))
   };
 
