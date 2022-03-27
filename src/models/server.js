@@ -36,7 +36,7 @@ class Server {
 
     // Instead of define here the routes, we import them from routes folder as if it was a middleware
     this.app.use(this.projectsPath, require('../routes/projects'));
-    //    this.app.use(this.employeesPath, require('../routes/employees'))
+    this.app.use(this.employeesPath, require('../routes/employees'))
   };
 
   listen() { // Listener function and possible feedback
