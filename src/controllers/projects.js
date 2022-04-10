@@ -17,7 +17,7 @@ const projectsGet = async (req = request, res = response) => {
 const projectGet = async (req = request, res = response) => {
   const { id } = req.params; // Reading URLparams with Express
 
-  const project = await Project.findOne({ "id": id }, {});
+  const project = await Project.findOne({ "_id": id }, {});
   res.status(200).json({
     project
   });
@@ -29,7 +29,7 @@ const projectPost = async (req = request, res = response) => {
   console.log("req: ", req.body)
 
   const {
-    id,
+//    id,
     name,
     desc,
     type,
@@ -42,7 +42,7 @@ const projectPost = async (req = request, res = response) => {
   } = req.body;
 
   const project = new Project({
-    id,
+ //   id,
     name,
     desc,
     type,

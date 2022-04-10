@@ -17,7 +17,7 @@ const employeesGet = async (req = request, res = response) => {
 const employeeGet = async (req = request, res = response) => {
   const { id } = req.params; // Reading URLparams with Express
   console.log(id)
-  const employee = await Employee.findOne({ "id": id }, {});
+  const employee = await Employee.findOne({ "_id": id }, {});
   res.status(200).json({
     employee
   });
@@ -28,7 +28,7 @@ const employeeGet = async (req = request, res = response) => {
 const employeePost = async (req = request, res = response) => {
   console.log("req: ", req.body)
   const {
-    id,
+   //id,
     name,
     surname,
     email,
@@ -39,7 +39,7 @@ const employeePost = async (req = request, res = response) => {
   } = req.body;
 
   const employee = new Employee({
-    id,
+   // id,
     name,
     surname,
     email,

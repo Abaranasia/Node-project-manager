@@ -1,11 +1,11 @@
 const mongoose = require("mongoose");
 
 const ProjectSchema = new mongoose.Schema({
-  id: {
+/*   id: {
     type: Number,
     required: true,
     unique: true
-  },
+  }, */
   name: {
     type: String,
     required: [true, 'Name is a required field']
