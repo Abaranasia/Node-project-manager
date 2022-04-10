@@ -17,7 +17,7 @@ class Server {
     this.connectDB();
 
     //Middlewares - introduces additional functionalities between the req and the res
-    //    this.middlewares();
+    this.middlewares();
 
     //Routes - define the way to enroute the website
     this.routes();
@@ -28,6 +28,16 @@ class Server {
     await dbConnection();
   };
 
+  middlewares() {
+    // For using cors to protect our routes
+    this.app.use(cors());
+
+    // Read and parse of the body to json format
+    this.app.use(express.json())
+
+    // Exposing the public directory
+    this.app.use(express.static('public'));
+  }
 
   routes() {
     /*  The routes can be defined here, but it's much more clear to
