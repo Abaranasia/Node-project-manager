@@ -10,7 +10,7 @@ router.get('/', employeesGet); // Lists all the employees
 
 router.get('/:id', employeeGet); // Lists one specific employee by id
 
-router.post('/', employeePost);
+router.post('/', employeePost); // Add a new employee to the DB
 
 
 module.exports = router;
