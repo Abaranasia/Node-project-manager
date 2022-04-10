@@ -26,7 +26,7 @@ const ProjectSchema = new mongoose.Schema({
   create_date: String,
   start_date: String,
   end_date: String,
-  state: {
+  status: {
     type: String,
     required: true,
   },
