@@ -30,7 +30,7 @@ const employeePost = async (req = request, res = response) => {
   const {
    //id,
     name,
-    surname,
+    //surname,
     email,
     profile,
     enrol_date,
@@ -41,7 +41,7 @@ const employeePost = async (req = request, res = response) => {
   const employee = new Employee({
    // id,
     name,
-    surname,
+    //surname,
     email,
     profile,
     enrol_date,
