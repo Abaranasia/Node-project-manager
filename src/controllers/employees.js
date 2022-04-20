@@ -65,8 +65,31 @@ const employeePost = async (req = request, res = response) => {
   });
 }
 
+
+// Delete an employee
+const employeeDelete = async (req = request, res = response) => {
+  const { id } = req.params; // uid of the user to be deleted
+
+  try {
+    const employee = await Employee.findByIdAndDelete(id);
+    console.log("deleting... ", id);
+    res.status(200).json({
+      msg: `The employee id=${id} has been deleted from the DB`,
+    });
+
+  } catch (error) {
+    console.log("ERROR: ", error);
+    res.status(500).json({
+      msg: `Server Error: ${error}`,
+    });
+  };
+
+
+}
+
 module.exports = {
   employeesGet,
   employeeGet,
   employeePost,
+  employeeDelete,
 };
