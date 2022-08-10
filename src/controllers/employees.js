@@ -71,7 +71,9 @@ const employeeDelete = async (req = request, res = response) => {
   const { id } = req.params; // uid of the user to be deleted
 
   try {
-    const employee = await Employee.findByIdAndDelete(id);
+    const employee = await Employee.findByIdAndDelete(id); // Physical delete of a document (not recomended!)
+    //const employee = await Employee.findByIdAndUpdate(id, { state: false }) // We just update the state to false
+
     console.log("deleting... ", id);
     res.status(200).json({
       msg: `The employee id=${id} has been deleted from the DB`,
@@ -83,8 +85,6 @@ const employeeDelete = async (req = request, res = response) => {
       msg: `Server Error: ${error}`,
     });
   };
-
-
 }
 
 module.exports = {
